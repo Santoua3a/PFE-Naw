@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfileGerantComponent } from './profile-gerant.component';
+import { CommercialeComponent } from './commerciale.component';
 
-describe('ProfileGerantComponent', () => {
-  let component: ProfileGerantComponent;
-  let fixture: ComponentFixture<ProfileGerantComponent>;
+describe('CommercialeComponent', () => {
+  let component: CommercialeComponent;
+  let fixture: ComponentFixture<CommercialeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProfileGerantComponent ]
+      declarations: [ CommercialeComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProfileGerantComponent);
+    fixture = TestBed.createComponent(CommercialeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

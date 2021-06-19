@@ -14,10 +14,16 @@ import { ClientsListAdminComponent } from './admin/clients-list-admin/clients-li
 import { FeedbackClientAdminComponent } from './admin/feedback-client-admin/feedback-client-admin.component';
 import { GerantComponent } from './gerant/gerant.component';
 import { SidebarGerantComponent } from './gerant/sidebar-gerant/sidebar-gerant.component';
-import { ProfileGerantComponent } from './gerant/profile-gerant/profile-gerant.component';
 import { ClientsListGerantComponent } from './gerant/clients-list-gerant/clients-list-gerant.component';
 import { AddTaskGerantComponent } from './gerant/add-task-gerant/add-task-gerant.component';
 import { TaskListGerantComponent } from './gerant/task-list-gerant/task-list-gerant.component';
+import { CommercialeComponent } from './commerciale/commerciale.component';
+import { SidebarCommercialeComponent } from './commerciale/sidebar-commerciale/sidebar-commerciale.component';
+import { TasksCommercialeComponent } from './commerciale/tasks-commerciale/tasks-commerciale.component';
+import { ClientComponent } from './client/client.component';
+import { SidebarClientComponent } from './client/sidebar-client/sidebar-client.component';
+import { SendFeedbackClientComponent } from './client/send-feedback-client/send-feedback-client.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -35,10 +41,16 @@ import { TaskListGerantComponent } from './gerant/task-list-gerant/task-list-ger
     FeedbackClientAdminComponent,
     GerantComponent,
     SidebarGerantComponent,
-    ProfileGerantComponent,
     ClientsListGerantComponent,
     AddTaskGerantComponent,
-    TaskListGerantComponent
+    TaskListGerantComponent,
+    CommercialeComponent,
+    SidebarCommercialeComponent,
+    TasksCommercialeComponent,
+    ClientComponent,
+    SidebarClientComponent,
+    SendFeedbackClientComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

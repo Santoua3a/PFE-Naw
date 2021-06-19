@@ -7,6 +7,10 @@ import { CommerciauxListAdminComponent } from './admin/commerciaux-list-admin/co
 import { EmployeListAdminComponent } from './admin/employe-list-admin/employe-list-admin.component';
 import { FeedbackClientAdminComponent } from './admin/feedback-client-admin/feedback-client-admin.component';
 import { ProfileAdminComponent } from './admin/profile-admin/profile-admin.component';
+import { SendFeedbackClientComponent } from './client/send-feedback-client/send-feedback-client.component';
+import { TasksCommercialeComponent } from './commerciale/tasks-commerciale/tasks-commerciale.component';
+import { AddTaskGerantComponent } from './gerant/add-task-gerant/add-task-gerant.component';
+import { TaskListGerantComponent } from './gerant/task-list-gerant/task-list-gerant.component';
 
 const routes: Routes = [
   {
@@ -29,6 +33,18 @@ const routes: Routes = [
   },
   {
     path:'feedback-client', component:FeedbackClientAdminComponent
+  },
+  {
+    path:'add-task-gerant', component:AddTaskGerantComponent
+  },
+  {
+    path:'tasks-list', component:TaskListGerantComponent
+  },
+  {
+    path:'my-tasks', component:TasksCommercialeComponent
+  },
+  {
+    path:'send-feedback', component:SendFeedbackClientComponent
   }
 ];
 
