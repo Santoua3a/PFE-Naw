@@ -1,6 +1,6 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarAdminComponent } from './admin/sidebar-admin/sidebar-admin.component';
@@ -24,6 +24,18 @@ import { ClientComponent } from './client/client.component';
 import { SidebarClientComponent } from './client/sidebar-client/sidebar-client.component';
 import { SendFeedbackClientComponent } from './client/send-feedback-client/send-feedback-client.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
+import { AffecTaskGerantComponent } from './gerant/affec-task-gerant/affec-task-gerant.component';
+import { CommercialListGerantComponent } from './gerant/commercial-list-gerant/commercial-list-gerant.component';
+import { ProfileGerantComponent } from './gerant/profile-gerant/profile-gerant.component';
+import { ProfileCommercialeComponent } from './commerciale/profile-commerciale/profile-commerciale.component';
+import { ProfileClComponent } from './client/profile-cl/profile-cl.component';
+import { authInterceptorProviders } from './_auth/auth.interceptor';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -50,13 +62,26 @@ import { NavbarComponent } from './navbar/navbar.component';
     ClientComponent,
     SidebarClientComponent,
     SendFeedbackClientComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
+    AffecTaskGerantComponent,
+    CommercialListGerantComponent,
+    ProfileGerantComponent,
+    ProfileCommercialeComponent,
+    ProfileClComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule,
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

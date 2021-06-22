@@ -1,0 +1,118 @@
+<body class="hold-transition register-page">
+  <div class="register-box">
+      <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+          <a href="#" class="h1"><b>Task</b>Management</a>
+        </div>
+        <div class="card-body">
+          <p class="login-box-msg">Inscrivez-vous</p>
+    
+          <form action="../../index.html" method="post" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit1()" #f="ngForm" novalidate>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Nom" name="nom" [(ngModel)]="form.nom" required minlength="3" maxlength="20" #nom="ngModel">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-user"></span>
+                </div>
+              </div>
+              <div class="alert-danger" *ngIf="nom.errors && f.submitted">
+                <div *ngIf="nom.errors.required">Username is required</div>
+                <div *ngIf="nom.errors.minlength">
+                  Nom must be at least 3 characters
+                </div>
+                <div *ngIf="nom.errors.maxlength">
+                  Nom must be at most 20 characters
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Prénom" name="prenom" [(ngModel)]="form.prenom" required minlength="3" maxlength="20" #prenom="ngModel">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-user"></span>
+                </div>
+              </div>
+              <div class="alert-danger" *ngIf="prenom.errors && f.submitted">
+                <div *ngIf="prenom.errors.required">Prenom is required</div>
+                <div *ngIf="prenom.errors.minlength">
+                  Prenom must be at least 3 characters
+                </div>
+                <div *ngIf="prenom.errors.maxlength">
+                  Prenom must be at most 20 characters
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Username" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-envelope"></span>
+                </div>
+              </div>
+              <div class="alert-danger" *ngIf="username.errors && f.submitted">
+                <div *ngIf="username.errors.required">Username is required</div>
+                <div *ngIf="username.errors.minlength">
+                  Username must be at least 3 characters
+                </div>
+                <div *ngIf="username.errors.maxlength">
+                  Username must be at most 20 characters
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="form.email" required minlength="3" maxlength="60" #email="ngModel">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+              <div class="alert-danger" *ngIf="email.errors && f.submitted">
+                <div *ngIf="email.errors.required">Email is required</div>
+                <div *ngIf="email.errors.email">
+                  Email must be a valid email address
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="password" class="form-control" placeholder="Mot de passe" name="password" [(ngModel)]="form.password" required minlength="3" maxlength="20" #password="ngModel">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+              <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">
+                  Password must be at least 6 characters
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-8">
+                <div class="icheck-primary">
+                  <input type="checkbox" id="agreeTerms" name="terms" value="agree" required>
+                  <label for="agreeTerms">
+                   J'accepte les <a href="#">termes et conditions</a>
+                  </label>
+                </div>
+              </div>
+              <!-- /.col -->
+              <div class="col-4">
+                <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
+              </div>
+              <!-- /.col -->
+            </div>
+            <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+              Signup failed!<br /> {{ errorMessage }}
+            </div>
+          </form>
+    
+    
+          <a routerLink="/login" class="text-center">Je suis déjà un utilisateur.</a>
+        </div>
+
+      </div>
+  </div>
+
+</body>
+    

@@ -1,3 +1,35 @@
+<app-sidebar-admin></app-sidebar-admin>
+<header class="header-nav menu_style_home_one style2 navbar-scrolltofixed stricky main-menu">
+    <div class="container-fluid p0">
+        <!-- Ace Responsive Menu -->
+        <nav>
+            <!-- Menu Toggle btn-->
+            <div class="menu-toggle">
+                <img class="nav_logo_img img-fluid" src="../assets/images/header-logo.png" alt="header-logo.png">
+                <button type="button" id="menu-btn">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <a href="#" class="navbar_brand float-left dn-smd">
+                <img class="logo1 img-fluid" src="../assets/images/header-logo2.png" alt="header-logo.png">
+                <img class="logo2 img-fluid" src="../assets/images/header-logo2.png" alt="header-logo2.png">
+                <span>FindHouse</span>
+            </a>
+            <!-- Responsive Menu Structure-->
+            <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
+            <ul id="respMenu" class="ace-responsive-menu text-left" data-menu-style="horizontal">
+                <li>
+                    <a href=""><span class="title" style="padding-left: 50px;"><b>Interface Admin | </b></span></a>
+                </li>
+                <li>
+                    <span class="title" style="padding-left: 50px;">Bonjour, Foulen Ben Foulen</span>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 <section class="our-dashbord dashbord bgc-f7 pb50">
     <div class="container-fluid">
         <div class="row">
@@ -16,7 +48,7 @@
                                     <div class="candidate_revew_search_box course fn-520">
                                         <form class="form-inline my-2">
                                             <input class="form-control mr-sm-2" type="search"
-                                                   placeholder="Rechercher Commerciale" aria-label="Search">
+                                                   placeholder="Rechercher Commercial" aria-label="Search">
                                             <button class="btn my-2 my-sm-0" type="submit"><span
                                                     class="flaticon-magnifying-glass"></span></button>
                                         </form>
@@ -35,18 +67,18 @@
                                             <tr>
                                                 <th scope="col">Nom et Prénom</th>
                                                 <th scope="col">Email</th>
-                                                <th scope="col">Téléphone</th>
+                                                <th scope="col"></th>
                                                 <th scope="col">État Tâche</th>
                                                 <th scope="col">Action Tâche</th>
-                                                <th scope="col">Action Commerciale</th>
+                                                <th scope="col">Action Commercial</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <tr>
-                                                <th scope="row">Free</th>
-                                                <td>0</td>
-                                                <td>3</td>
-                                                <td>8</td>
+                                                <th scope="row">Commercial 1</th>
+                                                <td>1@Commercial.com</td>
+                                                <td></td>
+                                                <td><span class="status_tag badge2">Terminée</span></td>
                                                 <td>
                                                     <ul class="view_edit_delete_list mb0">
                                                         <li class="list-inline-item" data-toggle="tooltip"
@@ -69,10 +101,10 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">Free</th>
-                                                <td>0</td>
-                                                <td>3</td>
-                                                <td>8</td>
+                                                <th scope="row">Commercial 2</th>
+                                                <td>2@Commercial.com</td>
+                                                <td></td>
+                                                <td><span class="status_tag badge3">En cours</span></td>
                                                 <td>
                                                     <ul class="view_edit_delete_list mb0">
                                                         <li class="list-inline-item" data-toggle="tooltip"
@@ -95,10 +127,10 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th class="active" scope="row">Free</th>
-                                                <td>0</td>
-                                                <td>3</td>
-                                                <td>8</td>
+                                                <th scope="row">Commercial 3</th>
+                                                <td>3@Commercial.com</td>
+                                                <td></td>
+                                                <td><span class="status_tag badge3">En cours</span></td>
                                                 <td>
                                                     <ul class="view_edit_delete_list mb0">
                                                         <li class="list-inline-item" data-toggle="tooltip"
@@ -121,36 +153,10 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">Free</th>
-                                                <td>0</td>
-                                                <td>3</td>
-                                                <td>8</td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="View"><a href="#"><span
-                                                                class="flaticon-view"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="View"><a href="#"><span
-                                                                class="flaticon-view"></span></a></li>
-                                                                <li class="list-inline-item" data-toggle="tooltip"
-                                                                    data-placement="top" title="Edit"><a href="#"><span
-                                                                        class="flaticon-edit"></span></a></li>
-                                                                <li class="list-inline-item" data-toggle="tooltip"
-                                                                    data-placement="top" title="Delete"><a href="#"><span
-                                                                        class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Free</th>
-                                                <td>0</td>
-                                                <td>3</td>
-                                                <td>8</td>
+                                                <th scope="row">Commercial 4</th>
+                                                <td>4@Commercial.com</td>
+                                                <td></td>
+                                                <td><span class="status_tag badge2">Terminée</span></td>
                                                 <td>
                                                     <ul class="view_edit_delete_list mb0">
                                                         <li class="list-inline-item" data-toggle="tooltip"
@@ -173,10 +179,10 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">Free</th>
-                                                <td>0</td>
-                                                <td>3</td>
-                                                <td>8</td>
+                                                <th scope="row">Commercial 5</th>
+                                                <td>5@Commercial.com</td>
+                                                <td></td>
+                                                <td><span class="status_tag badge2">Terminée</span></td>
                                                 <td>
                                                     <ul class="view_edit_delete_list mb0">
                                                         <li class="list-inline-item" data-toggle="tooltip"
@@ -199,10 +205,36 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">Free</th>
-                                                <td>0</td>
-                                                <td>3</td>
-                                                <td>8</td>
+                                                <th scope="row">Commercial 6</th>
+                                                <td>6@Commercial.com</td>
+                                                <td></td>
+                                                <td><span class="status_tag badge2">Terminée</span></td>
+                                                <td>
+                                                    <ul class="view_edit_delete_list mb0">
+                                                        <li class="list-inline-item" data-toggle="tooltip"
+                                                            data-placement="top" title="View"><a href="#"><span
+                                                                class="flaticon-view"></span></a></li>
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <ul class="view_edit_delete_list mb0">
+                                                        <li class="list-inline-item" data-toggle="tooltip"
+                                                            data-placement="top" title="View"><a href="#"><span
+                                                                class="flaticon-view"></span></a></li>
+                                                        <li class="list-inline-item" data-toggle="tooltip"
+                                                            data-placement="top" title="Edit"><a href="#"><span
+                                                                class="flaticon-edit"></span></a></li>
+                                                        <li class="list-inline-item" data-toggle="tooltip"
+                                                            data-placement="top" title="Delete"><a href="#"><span
+                                                                class="flaticon-garbage"></span></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Commercial 7</th>
+                                                <td>7@Commercial.com</td>
+                                                <td></td>
+                                                <td><span class="status_tag badge3">En cours</span></td>
                                                 <td>
                                                     <ul class="view_edit_delete_list mb0">
                                                         <li class="list-inline-item" data-toggle="tooltip"

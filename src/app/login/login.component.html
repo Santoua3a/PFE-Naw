@@ -1,0 +1,59 @@
+<body class="hold-transition login-page">
+    <div class="login-box">
+      <!-- /.login-logo -->
+      <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+          <p class="h1">Bienvenue à <a href="#" class="h1"><b>Task</b>Management</a></p>
+        </div>
+        <div class="card-body">
+          <p class="login-box-msg">Connectez-vous</p>
+    
+          <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="form.email" required #email="ngModel">
+              <div class="alert alert-danger" role="alert" *ngIf="email.errors && f.submitted">
+                Username or Email is required!
+              </div>
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-envelope"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel">
+              <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">
+                  Password must be at least 6 characters
+                </div>
+              </div>
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+              </div>
+              <!-- /.col -->
+            </div>
+            <div class="form-group">
+              <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
+                Login failed: {{ errorMessage }}
+              </div>
+            </div>
+          </form>
+         <br>
+          <p class="mb-0">
+            <a routerLink="/register" class="text-center">Vous n'avez pas de compte? Inscrivez-vous içi.</a>
+          </p>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+    </body>
+    
