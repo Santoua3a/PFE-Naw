@@ -47,7 +47,7 @@
                                 <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
                                     <div class="col-lg-12">
                                         <div class="my_profile_setting_textarea form-group">
-                                            <label for="feedbackMessage">Votre Message</label>
+                                            <label for="msg">Votre Message</label>
                                             <textarea class="form-control" id="msg" rows="8" name="msg" [(ngModel)]="form.msg" required minlength="3" #msg="ngModel"></textarea>
                                         </div>
                                         <div class="alert-danger" *ngIf="msg.errors && f.submitted">

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/_auth/auth.service';
+import { FeedInfo } from 'src/app/_auth/feed-info';
 import { Feed } from 'src/app/_modals/feed';
-import { User } from 'src/app/_modals/user';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 @Component({
@@ -12,9 +12,8 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 })
 export class SendFeedbackClientComponent implements OnInit {
 
-  form:any={
-    msg: null
-  }
+  form:any={}
+  private feedInfo!:FeedInfo;
 
   errorMessage = "L envoie du feedback à été échoué ! Vueillez réessayez une autre fois."
   isSuccessful= false;
@@ -27,9 +26,9 @@ export class SendFeedbackClientComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const msg = this.form; 
+    this.feedInfo= new FeedInfo(this.tokenStorage.getUsername(), this.form.msg)
 
-    this.authService.createFeed(msg).subscribe(
+    this.authService.createFeed(this.feedInfo).subscribe(
       data=>{
         console.log(data);
         this.isSuccessful=true;

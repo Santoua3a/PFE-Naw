@@ -74,87 +74,12 @@
                                                 <th scope="col">Action</th>
                                             </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody *ngFor="let t of tasks">
                                             <tr>
-                                                <th class="title" scope="row">Tâche 1</th>
+                                                <th class="title" scope="row">{{t.nom}}</th>
                                                 <td class="dn-lg"></td>
-                                                <td class="para">Février 13, 2021</td>
-                                                <td class="dn-lg">Avril 29, 2021</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#">
-                                                            <span class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Tâche 2</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="para">Aout 4, 2021</td>
-                                                <td class="dn-lg">Septembre 26, 2021</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#">
-                                                            <span class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Tâche 3</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="para">Juillet 27, 2021</td>
-                                                <td class="dn-lg">October 16, 2021</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#">
-                                                            <span class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Tâche 4</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="para">Janvier 21, 2021</td>
-                                                <td class="dn-lg">Février 2, 2021</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#">
-                                                            <span class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Tâche 5</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="para">Février 1, 2021</td>
-                                                <td class="dn-lg">Juin 21, 2021</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#">
-                                                            <span class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Tâche 6</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="para">Mars 26, 2021</td>
-                                                <td class="dn-lg">Avril 6, 2021</td>
+                                                <td class="para">{{t.dated}}</td>
+                                                <td class="dn-lg">{{t.datef}}</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td>

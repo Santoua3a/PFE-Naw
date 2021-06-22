@@ -1,4 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
+import { Task } from 'src/app/_modals/task';
+import { TaskServicesService } from 'src/app/_services/task-services.service';
 
 @Component({
   selector: 'app-task-list-gerant',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-list-gerant.component.css']
 })
 export class TaskListGerantComponent implements OnInit {
-
-  constructor() { }
+  tasks : Task[]=[]
+  constructor(private s :TaskServicesService) { }
 
   ngOnInit(): void {
+    this.s.gettasks().subscribe(res =>{
+     this.tasks=res;
+     console.log(this.tasks)
+    }
+      
+      )
   }
 
 }

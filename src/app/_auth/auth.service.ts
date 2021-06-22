@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { JwtResponse } from './jwt-response';
 import { AuthLoginInfo } from './login-info';
 import { SignUpInfo } from './signup-info';
+import { FeedInfo } from './feed-info';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -37,10 +38,8 @@ export class AuthService {
     }, httpOptions);
   }
 
-  createFeed(msg: string): Observable<string>{
-    return this.http.post<string>(this.createfeedUrl, {
-      msg
-    }, httpOptions);
+  createFeed(credentials: FeedInfo): Observable<string>{
+    return this.http.post<string>(this.createfeedUrl, credentials, httpOptions);
   }
 
 }

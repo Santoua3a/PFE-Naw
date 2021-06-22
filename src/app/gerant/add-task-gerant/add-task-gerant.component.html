@@ -41,35 +41,44 @@
                             <h2 class="breadcrumb_title">Ajouter une nouvelle tâche</h2>
                         </div>
                     </div>
-                    <div class="col-lg-12">
-                        <div class="my_dashboard_review">
-                            <div class="row">
-                                <div class="col-lg-12 col-xl-12">
-                                    <div class="my_profile_setting_input form-group">
-                                        <label for="formGroupExampleArea">Nom</label>
-                                        <input type="text" class="form-control" id="formGroupExampleArea">
+                    <form  *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit(f.value)" #f="ngForm" novalidate>
+                        <div class="col-lg-12">
+                            <div class="my_dashboard_review">
+                                <div class="row">
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="my_profile_setting_input form-group">
+                                            <label for="formGroupExampleArea">Nom</label>
+                                            <input type="text" class="form-control" id="formGroupExampleArea" name="nom" [(ngModel)]="form.nom" required minlength="3" maxlength="20" #nom="ngModel">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-6">
-                                    <div class="my_profile_setting_input form-group">
-                                        <label for="formGroupExampleArea">Date Début</label>
-                                        <input type="date" class="form-control" id="formGroupExampleArea">
+                                    <div class="col-lg-6 col-xl-6">
+                                        <div class="my_profile_setting_input form-group">
+                                            <label for="formGroupExampleArea">Date Début</label>
+                                            <input type="date" class="form-control" id="formGroupExampleArea" name="dated" [(ngModel)]="form.dated" required #dated="ngModel">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-6">
-                                    <div class="my_profile_setting_input form-group">
-                                        <label for="formGroupExampleArea">Date Fin</label>
-                                        <input type="date" class="form-control" id="formGroupExampleArea">
+                                    <div class="col-lg-6 col-xl-6">
+                                        <div class="my_profile_setting_input form-group">
+                                            <label for="formGroupExampleArea">Date Fin</label>
+                                            <input type="date" class="form-control" id="formGroupExampleArea" name="datef" [(ngModel)]="form.datef" required #datef="ngModel">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-12">
-                                    <div class="my_profile_setting_input">
-                                        <button class="btn btn2 float-right">AJOUTER</button>
+                                    <div class="col-lg-12 col-xl-12">
+                                        <div class="my_profile_setting_input form-group">
+                                            <label for="formGroupExampleArea">État</label>
+                                            <input type="text" class="form-control" id="formGroupExampleArea" placeholder="En Cours" name="etat" [(ngModel)]="form.etat"  #etat="ngModel">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <div class="my_profile_setting_input">
+                                            <button class="btn btn2 float-right" type="submit">AJOUTER</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
+                    
                 </div>
                 <div class="row mt50">
                     <div class="col-lg-12">
