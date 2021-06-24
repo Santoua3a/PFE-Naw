@@ -24,7 +24,7 @@
                     <a href=""><span class="title" style="padding-left: 50px;"><b>Interface Admin | </b></span></a>
                 </li>
                 <li>
-                    <span class="title" style="padding-left: 50px;">Bonjour, Foulen Ben Foulen</span>
+                    <span class="title" style="padding-left: 50px;">Bonjour, {{username}}</span>
                 </li>
             </ul>
         </nav>
@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="my_profile_setting_input form-group">
-                                        <label for="formGroupExampleArea">Email</label>
+                                        <label for="formGroupExampleArea">Username</label>
                                         <input type="email" class="form-control" id="formGroupExampleArea" name="email" [(ngModel)]="form.email" required minlength="3" maxlength="20" #email="ngModel">
                                         <div class="alert-danger" *ngIf="email.errors && f.submitted">
                                             <div *ngIf="email.errors.required">Email is required</div>
@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="col-lg-6 col-xl-6">
                                     <div class="my_profile_setting_input form-group">
-                                        <label for="formGroupExampleArea">Username</label>
+                                        <label for="formGroupExampleArea">Email</label>
                                         <input type="text" class="form-control" id="formGroupExampleArea" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel">
                                         <div class="alert-danger" *ngIf="username.errors && f.submitted">
                                             <div *ngIf="username.errors.required">Username is required</div>
@@ -114,13 +114,13 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-xl-6">
-                                    <div class="my_profile_setting_input form-group">
+                                    <div class="my_profile_setting_input form-group" >
                                         <label for="formGroupExampleArea">Rôle</label>
                                         <div class="form-group ui_kit_select_search mb0">
-                                            <select class="selectpicker" data-width="100%" class="form-control" name="roles" [(ngModel)]="form.roles" required minlength="3" maxlength="20" #roles="ngModel">
-                                                <option data-tokens="Agent/Admin" >Admin</option>
-                                                <option data-tokens="Agent/Gerant" >Gérant</option>
-                                                <option data-tokens="Agent/Commerciale" >Commerciale</option>
+                                            <select class="selectpicker" data-width="100%" class="form-control" name="role" [(ngModel)]="form.role" required minlength="3" maxlength="20" #roles="ngModel">
+                                                <option data-tokens="Agent/Admin" value="admin" >Admin</option>
+                                                <option data-tokens="Agent/Gerant" value="manager">Gérant</option>
+                                                <option data-tokens="Agent/Commerciale" value="commercial">Commercial</option>
                                             </select>
                                         </div>
                                     </div>

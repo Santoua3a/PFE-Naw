@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent implements OnInit {
-
+  username:any;
   constructor() { }
 
   ngOnInit(): void {
+    this.username = window.sessionStorage.getItem('AuthUsername');
   }
 
 }

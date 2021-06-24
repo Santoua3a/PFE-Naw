@@ -22,30 +22,25 @@
                                         <div class="col-lg-6 col-xl-6">
                                             <div class="my_profile_setting_input form-group">
                                                 <label for="formGroupExampleInput1">Username</label>
-                                                <input type="text" class="form-control" id="formGroupExampleInput1" placeholder="FouLeN">
+                                                <input type="text" class="form-control" id="formGroupExampleInput1" disabled placeholder="{{c.username}}">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-xl-6">
                                             <div class="my_profile_setting_input form-group">
                                                 <label for="formGroupExampleEmail">Email</label>
-                                                <input type="email" class="form-control" id="formGroupExampleEmail" placeholder="foulen.ben@gmail.com">
+                                                <input type="email" class="form-control" id="formGroupExampleEmail" disabled placeholder="{{c.email}}">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-xl-6">
                                             <div class="my_profile_setting_input form-group">
                                                 <label for="formGroupExampleInput3">Nom</label>
-                                                <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Foulen">
+                                                <input type="text" class="form-control" id="formGroupExampleInput3" disabled placeholder="{{c.nom}}">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-xl-6">
                                             <div class="my_profile_setting_input form-group">
                                                 <label for="formGroupExampleInput4">Prénom</label>
-                                                <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Ben Foulen">
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12 text-right">
-                                            <div class="my_profile_setting_input">
-                                                <button class="btn btn2">Modifier</button>
+                                                <input type="text" class="form-control" id="formGroupExampleInput4" disabled placeholder="{{c.prenom}}">
                                             </div>
                                         </div>
                                     </div>
@@ -59,6 +54,7 @@
                                     <h4>Changer mot de passe</h4>
                                 </div>
                                 <div class="col-xl-10">
+                                    <form *ngFor>
                                     <div class="row">
                                         <div class="col-xl-6">
                                             <div class="my_profile_setting_input form-group">
@@ -80,6 +76,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

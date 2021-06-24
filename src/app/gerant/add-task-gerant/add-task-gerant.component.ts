@@ -13,26 +13,22 @@ export class AddTaskGerantComponent implements OnInit {
     nom: null,
     dated: null,
     datef: null,
-    etat:null
+    etat:"En Cours"
   };
   t:any
-
+  username:any;
   isSuccessful = false;
   constructor(private taskService: TaskServicesService) { }
 
   ngOnInit(): void {
+    this.username = window.sessionStorage.getItem('AuthUsername');
   }
 
   onSubmit(v:any){
-      const {nom , dated, datef } = this.form;
-      this.taskService.addTask(v).subscribe(res => {
-
-      this.t = res
-        console.log(this.t)
-
-      }
-       
-        )
+      const {nom , dated, datef, etat } = this.form;
+      this.taskService.addTask(nom, dated, datef, etat).subscribe(data => {
+        console.log(data)
+      })
   }
 
 }

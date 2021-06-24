@@ -10,6 +10,7 @@ export class ProfileGerantComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    let c = JSON.parse(localStorage.getItem('user') || "{}");
   }
 
 }

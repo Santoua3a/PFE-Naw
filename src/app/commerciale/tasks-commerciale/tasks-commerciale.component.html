@@ -24,7 +24,7 @@
                     <a href=""><span class="title" style="padding-left: 50px;"><b>Interface Commercial | </b></span></a>
                 </li>
                 <li>
-                    <span class="title" style="padding-left: 50px;">Bonjour, Foulen Ben Foulen</span>
+                    <span class="title" style="padding-left: 50px;">Bonjour, {{username}}</span>
                 </li>
             </ul>
         </nav>
@@ -74,89 +74,26 @@
                                                 <th scope="col">État Tâche</th>
                                             </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody *ngFor="let f of b">
                                             <tr>
-                                                <th class="title" scope="row">Tâche 1</th>
+                                                <th class="title" scope="row">{{f.nom}}</th>
                                                 <td class="dn-lg"></td>
-                                                <td class="para">Février 13, 2021</td>
-                                                <td class="dn-lg">Avril 29, 2021</td>
+                                                <td class="para">{{f.dated}}</td>
+                                                <td class="dn-lg">{{f.datef}}</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td>
-                                                    <label class="switch">
-                                                        <input type="checkbox">
-                                                        <span class="slider round"></span>
-                                                      </label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Tâche 2</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="para">Aout 4, 2021</td>
-                                                <td class="dn-lg">Septembre 26, 2021</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <label class="switch">
-                                                        <input type="checkbox">
-                                                        <span class="slider round"></span>
-                                                      </label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Tâche 3</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="para">Juillet 27, 2021</td>
-                                                <td class="dn-lg">October 16, 2021</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <label class="switch">
-                                                        <input type="checkbox">
-                                                        <span class="slider round"></span>
-                                                      </label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Tâche 4</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="para">Janvier 21, 2021</td>
-                                                <td class="dn-lg">Février 2, 2021</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <label class="switch">
-                                                        <input type="checkbox">
-                                                        <span class="slider round"></span>
-                                                      </label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Tâche 5</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="para">Février 1, 2021</td>
-                                                <td class="dn-lg">Juin 21, 2021</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <label class="switch">
-                                                        <input type="checkbox">
-                                                        <span class="slider round"></span>
-                                                      </label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Tâche 6</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="para">Mars 26, 2021</td>
-                                                <td class="dn-lg">Avril 6, 2021</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <label class="switch">
-                                                        <input type="checkbox">
-                                                        <span class="slider round"></span>
-                                                      </label>
+                                                    <form >
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" [(ngModel)]="val" type="radio" name="exampleRadios" id="exampleRadios1" value="En cours" checked>
+                                                            <label class="form-check-label" for="exampleRadios1"> En cours</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" [(ngModel)]="val" type="radio" name="exampleRadios" id="exampleRadios2" value="Terminée">
+                                                            <label class="form-check-label" for="exampleRadios2"> Terminée</label>
+                                                        </div>           
+                                                    </form>
+                                                    <input type="submit" (click)="onSubmit(f.id)" value=save>
                                                 </td>
                                             </tr>
                                             </tbody>

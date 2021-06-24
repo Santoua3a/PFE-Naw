@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./affec-task-admin.component.css']
 })
 export class AffecTaskAdminComponent implements OnInit {
-
+  username:any;
   constructor() { }
 
   ngOnInit(): void {
+    this.username = window.sessionStorage.getItem('AuthUsername');
   }
 
 }

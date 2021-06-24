@@ -8,13 +8,26 @@ import { UserService } from 'src/app/_services/user.service';
   styleUrls: ['./commerciaux-list-admin.component.css']
 })
 export class CommerciauxListAdminComponent implements OnInit {
-tab:User[]=[]
+  ff:any
+  v :any
+  user!:User
+  username:any;
   constructor(private s : UserService) { }
 
   ngOnInit(): void {
-    this.s.getcommerciaux().subscribe(
-     res => this.tab = res 
-    )
-  }
+    this.username = window.sessionStorage.getItem('AuthUsername');
+    this.s.getgerants().subscribe(res =>{
+      this.ff = res
+      this.v= this.ff.filter((r:User) => r.role == "commercial")
+    })
+
+}
+
+onDelete(id:number){
+  this.s.deleteUser(id).subscribe(res => {
+    console.log(res)
+    this.ngOnInit()
+  })
+}
 
 }

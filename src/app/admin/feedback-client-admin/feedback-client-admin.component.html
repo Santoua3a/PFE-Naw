@@ -24,7 +24,7 @@
                     <a href=""><span class="title" style="padding-left: 50px;"><b>Interface Admin | </b></span></a>
                 </li>
                 <li>
-                    <span class="title" style="padding-left: 50px;">Bonjour, Foulen Ben Foulen</span>
+                    <span class="title" style="padding-left: 50px;">Bonjour, {{username}}</span>
                 </li>
             </ul>
         </nav>
@@ -45,67 +45,25 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div id="myreview" class="my_dashboard_review">
-                            <div class="review_content">
-                                <h5 class="review_title mt-0 text-thm">Client 1</h5>
+                            <div class="review_content" *ngFor="let f of feeds">
+                                <h5 class="review_title mt-0 text-thm">{{f.client.nom}} {{f.client.prenom}}</h5>
                                 <div class="media pb30 mt30 bb1">
                                     <div class="media-body">
-                                        <p class="para">Beautiful home, very picturesque and close to everything in
-                                            jtree! A little warm for a hot weekend, but would love to come back
-                                            during the cooler seasons! Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing elit. Accusantium voluptates eum, velit recusandae, ducimus
-                                            earum aperiam commodi error officia optio aut et quae nam nostrum!</p>
-                                            <ul class="view_edit_delete_list mb0 mt35">
-                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top"
-                                                    title="Voir Plus"><a href="#"><span class="flaticon-view"></span></a>
-                                                </li>
-                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top"
-                                                    title="Supprimer"><a href="#"><span class="flaticon-garbage"></span></a>
-                                                </li>
-                                            </ul>
-                                    </div>
-                                </div>
-                                <br>
-                                <h5 class="review_title mt-0 text-thm">Client 2</h5>
-                                <div class="media pb30 mt30 bb1">
-                                    <div class="media-body">
-                                        <p class="para">Beautiful home, very picturesque and close to everything in
-                                            jtree! A little warm for a hot weekend, but would love to come back
-                                            during the cooler seasons! Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing elit. Accusantium voluptates eum, velit recusandae, ducimus
-                                            earum aperiam commodi error officia optio aut et quae nam nostrum!</p>
-                                            <ul class="view_edit_delete_list mb0 mt35">
-                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top"
-                                                    title="Voir Plus"><a href="#"><span class="flaticon-view"></span></a>
-                                                </li>
-                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top"
-                                                    title="Supprimer"><a href="#"><span class="flaticon-garbage"></span></a>
-                                                </li>
-                                            </ul>
-                                    </div>
-                                </div>
-                                <br>
-                                <h5 class="review_title mt-0 text-thm">Client 3</h5>
-                                <div class="media pb30 mt30 bb1">
-                                    <div class="media-body">
-                                        <p class="para">Beautiful home, very picturesque and close to everything in
-                                            jtree! A little warm for a hot weekend, but would love to come back
-                                            during the cooler seasons! Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing elit. Accusantium voluptates eum, velit recusandae, ducimus
-                                            earum aperiam commodi error officia optio aut et quae nam nostrum!</p>
-                                            <ul class="view_edit_delete_list mb0 mt35">
-                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top"
-                                                    title="Voir Plus"><a href="#"><span class="flaticon-view"></span></a>
-                                                </li>
-                                                <li class="list-inline-item" data-toggle="tooltip" data-placement="top"
-                                                    title="Supprimer"><a href="#"><span class="flaticon-garbage"></span></a>
-                                                </li>
-                                            </ul>
+                                        <p class="para">{{f.msg}}</p>
+                                        <ul class="view_edit_delete_list mb0 mt35">
+                                            <li class="list-inline-item" data-toggle="tooltip" data-placement="top"
+                                                title="Voir Plus"><a href="#"><span class="flaticon-view"></span></a>
+                                            </li>
+                                            <li class="list-inline-item" data-toggle="tooltip" data-placement="top"
+                                                    title="Supprimer"><a (click)="onDelete(f.id)"><span class="flaticon-garbage"></span></a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
                 <div class="row mt50">
                     <div class="col-lg-12">
                         <div class="copyright-widget text-center">

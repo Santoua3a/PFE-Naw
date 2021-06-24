@@ -11,9 +11,8 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
   styleUrls: ['./send-feedback-client.component.css']
 })
 export class SendFeedbackClientComponent implements OnInit {
-
+  username:any;
   form:any={}
-  private feedInfo!:FeedInfo;
 
   errorMessage = "L envoie du feedback à été échoué ! Vueillez réessayez une autre fois."
   isSuccessful= false;
@@ -23,17 +22,30 @@ export class SendFeedbackClientComponent implements OnInit {
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router:Router) { }
 
   ngOnInit(): void {
+    this.username = window.sessionStorage.getItem('AuthUsername');
   }
 
   onSubmit(): void {
-    this.feedInfo= new FeedInfo(this.tokenStorage.getUsername(), this.form.msg)
+    let fr:string=this.form.msg;
+    let c = JSON.parse(localStorage.getItem('user') || "{}");
+    let i = c.id;
+    
+    console.log("type of data")
+    console.log(typeof(fr));
+    console.log(fr);
+    console.log(typeof(i));
+    console.log(i);
 
-    this.authService.createFeed(this.feedInfo).subscribe(
+    // let feed={
+    //   msg:this.form.msg.toString(),
+    //   nom:this.username
+    // }
+    this.authService.createFeed(fr, i).subscribe(
       data=>{
         console.log(data);
+        console.log(this.username)
         this.isSuccessful=true;
         this.isSendFailed=false;
-        this.reloadPage();
       },
       err => {
         this.errorMessage = err.error.message;

@@ -17,7 +17,8 @@ export class RegisterComponent implements OnInit {
     nom: null,
     prenom: null,
     email:null,
-    roles:null
+    role:"client",
+    roles: null
   };
 
   errorMessage = 'L"ajout d"un nouvel employé est échoué ! Veuillez réessayer une autre fois.';
@@ -31,9 +32,9 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit1(): void {
-    const { nom, prenom, username, email, password, roles } = this.form;
+    const { nom, prenom, username, email, password, role, roles } = this.form;
 
-    this.authService.registerUser(nom, prenom, email, username, password, roles).subscribe(
+    this.authService.registerUser(nom, prenom, email, username, password, role, roles).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;

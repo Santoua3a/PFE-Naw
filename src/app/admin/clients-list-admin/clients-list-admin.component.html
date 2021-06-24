@@ -15,7 +15,6 @@
             <a href="#" class="navbar_brand float-left dn-smd">
                 <img class="logo1 img-fluid" src="../assets/images/header-logo2.png" alt="header-logo.png">
                 <img class="logo2 img-fluid" src="../assets/images/header-logo2.png" alt="header-logo2.png">
-                <span>FindHouse</span>
             </a>
             <!-- Responsive Menu Structure-->
             <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
@@ -24,7 +23,7 @@
                     <a href=""><span class="title" style="padding-left: 50px;"><b>Interface Admin | </b></span></a>
                 </li>
                 <li>
-                    <span class="title" style="padding-left: 50px;">Bonjour, Foulen Ben Foulen</span>
+                    <span class="title" style="padding-left: 50px;">Bonjour, {{username}}</span>
                 </li>
             </ul>
         </nav>
@@ -74,9 +73,9 @@
                                                 <th scope="col">Action</th>
                                             </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody *ngFor="let a of v "> 
                                             <tr>
-                                                <th class="title" scope="row">Client 6</th>
+                                                <th class="title" scope="row">{{a.prenom}} {{a.nom}}</th>
                                                 <td class="dn-lg"></td>
                                                 <td class="dn-lg"></td>
                                                 <td></td>
@@ -85,122 +84,15 @@
                                                 <td>
                                                     <ul class="view_edit_delete_list mb0">
                                                         <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="View"><a href="#"><span
+                                                            data-placement="top" title="View"><a [routerLink]="['/userview',a.id]"><span
                                                                 class="flaticon-view"></span></a></li>
                                                         <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#"><span
-                                                                class="flaticon-edit"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Delete"><a href="#"><span
+                                                            data-placement="top" title="Delete" (click)="onDelete(a.id)"><a><span
                                                                 class="flaticon-garbage"></span></a></li>
                                                     </ul>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Client 5</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="dn-lg"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="dn-lg"></td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="View"><a href="#"><span
-                                                                class="flaticon-view"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#"><span
-                                                                class="flaticon-edit"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Delete"><a href="#"><span
-                                                                class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" class="active" scope="row">Client 4</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="dn-lg"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="dn-lg"></td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="View"><a href="#"><span
-                                                                class="flaticon-view"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#"><span
-                                                                class="flaticon-edit"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Delete"><a href="#"><span
-                                                                class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Client 3</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="dn-lg"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="dn-lg"></td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="View"><a href="#"><span
-                                                                class="flaticon-view"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#"><span
-                                                                class="flaticon-edit"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Delete"><a href="#"><span
-                                                                class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Client 2</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="dn-lg"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="dn-lg"></td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="View"><a href="#"><span
-                                                                class="flaticon-view"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#"><span
-                                                                class="flaticon-edit"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Delete"><a href="#"><span
-                                                                class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Client 1</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="dn-lg"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="dn-lg"></td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="View"><a href="#"><span
-                                                                class="flaticon-view"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#"><span
-                                                                class="flaticon-edit"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Delete"><a href="#"><span
-                                                                class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
+                                            
                                             </tbody>
                                         </table>
                                     </div>

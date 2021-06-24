@@ -34,12 +34,12 @@ export class LoginComponent implements OnInit {
       );
 
     this.authService.attemptAuth(this.loginInfo).subscribe(
-      data => {
+      (data:any)=> {
 
         if(data.email != null){
 
           console.log("yaaa");
-          if(data.roles[0] == "ROLE_ADMIN"){
+          if((data.role == "admin")|| (data.roles == "ROLE_ADMIN")) {
             this.router.navigate(['admin'])
             console.log("haha");
           }
@@ -53,19 +53,29 @@ export class LoginComponent implements OnInit {
           if(data.roles[0]=="ROLE_MANAGER"){
             this.router.navigate(['gerant']);
           }
-
-
+          
+          localStorage.setItem('user',JSON.stringify(data))
+          
+          
           this.tokenStorage.saveToken(data.accessToken);
           this.tokenStorage.saveUsername(data.email);
-
+          this.tokenStorage.saveCurrentUserID(data.id.toString());
+          this.tokenStorage.savePassword(data.password);
+          this.tokenStorage.saveEmail(data.username);
+          this.tokenStorage.saveNom(data.nom);
+          this.tokenStorage.savePrenom(data.prenom);
+          
+          window.sessionStorage.setItem("AuthUsername", data.username);
+          window.sessionStorage.setItem("AuthEmail", data.email);
+          window.sessionStorage.setItem("AuthPass", data.password);
+          window.sessionStorage.setItem("AuthPrenom", data.prenom);
+          window.sessionStorage.setItem("AuthNom", data.nom);
+          console.log(data.email);
 
           this.tokenStorage.saveAuthorities(data.authorities);
   
           this.isLoginFailed = false;
           this.isLoggedIn = true;
-          //this.roles = this.tokenStorage.getAuthorities();
-          //this.router.navigate(['admin']);
-
         }
         
       },

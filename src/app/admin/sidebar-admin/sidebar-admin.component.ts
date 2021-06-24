@@ -15,7 +15,7 @@ export class SidebarAdminComponent implements OnInit {
 
   signOut(){
     window.sessionStorage.clear();
-    this.router.navigate(['login']);
+    this.router.navigateByUrl('login');
   }
 
 }

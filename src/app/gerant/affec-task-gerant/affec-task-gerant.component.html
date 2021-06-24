@@ -24,7 +24,7 @@
                     <a href=""><span class="title" style="padding-left: 50px;"><b>Interface Gérant | </b></span></a>
                 </li>
                 <li>
-                    <span class="title" style="padding-left: 50px;">Bonjour, Foulen Ben Foulen</span>
+                    <span class="title" style="padding-left: 50px;">Bonjour, {{username}}</span>
                 </li>
             </ul>
         </nav>
@@ -41,6 +41,7 @@
                             <h2 class="breadcrumb_title">Affecter une tâche à un commercial</h2>
                         </div>
                     </div>
+                <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
                     <div class="col-lg-12">
                         <div class="my_dashboard_review">
                             <div class="row">
@@ -48,13 +49,8 @@
                                     <div class="my_profile_setting_input form-group">
                                         <label for="formGroupExampleArea">Choisissez un commercial</label>
                                         <div class="form-group ui_kit_select_search mb0">
-                                            <select class="selectpicker" data-width="100%" class="form-control" name="role">
-                                                <option data-tokens="Agent/Commerciale" >1</option>
-                                                <option data-tokens="Agent/Commerciale" >2</option>
-                                                <option data-tokens="Agent/Commerciale" >3</option>
-                                                <option data-tokens="Agent/Commerciale" >4</option>
-                                                <option data-tokens="Agent/Commerciale" >5</option>
-                                                <option data-tokens="Agent/Commerciale" >6</option>
+                                            <select class="selectpicker" data-width="100%" class="form-control" name="commercial" [(ngModel)]="idComm" required #commercial="ngModel">
+                                                <option data-tokens="Agent/Commerciale" [value]="c.id" *ngFor="let c of v " >ID : {{c.id}} - {{c.nom}} {{c.prenom}}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -63,25 +59,21 @@
                                     <div class="my_profile_setting_input form-group">
                                         <label for="formGroupExampleArea">Choisissez une tâche</label>
                                         <div class="form-group ui_kit_select_search mb0">
-                                            <select class="selectpicker" data-width="100%" class="form-control" name="role">
-                                                <option data-tokens="Agent/tache" >1</option>
-                                                <option data-tokens="Agent/tache" >2</option>
-                                                <option data-tokens="Agent/tache" >3</option>
-                                                <option data-tokens="Agent/tache" >4</option>
-                                                <option data-tokens="Agent/tache" >5</option>
-                                                <option data-tokens="Agent/tache" >6</option>
+                                           <select class="selectpicker" data-width="100%" class="form-control" name="task"[(ngModel)]="idTask" required #task="ngModel">
+                                                <option data-tokens="Agent/tache" [value]="c.id" *ngFor = "let c of tasks">ID : {{c.id}} - {{c.nom}}</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="my_profile_setting_input">
-                                        <button class="btn btn2 float-right">AFFECTER</button>
+                                        <button class="btn btn2 float-right" (click)="onSubmit()">AFFECTER</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </form>
                 </div>
                 <div class="row mt50">
                     <div class="col-lg-12">

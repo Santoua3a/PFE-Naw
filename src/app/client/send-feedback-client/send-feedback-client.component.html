@@ -24,7 +24,7 @@
                     <a href=""><span class="title" style="padding-left: 50px;"><b>Interface Client | </b></span></a>
                 </li>
                 <li>
-                    <span class="title" style="padding-left: 50px;">Bonjour, Foulen Ben Foulen</span>
+                    <span class="title" style="padding-left: 50px;">Bonjour, {{username}}</span>
                 </li>
             </ul>
         </nav>
@@ -44,11 +44,11 @@
                     <div class="col-lg-12">
                         <div class="my_dashboard_review">
                             <div class="row">
-                                <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                                <form class="col-lg-12" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
                                     <div class="col-lg-12">
                                         <div class="my_profile_setting_textarea form-group">
                                             <label for="msg">Votre Message</label>
-                                            <textarea class="form-control" id="msg" rows="8" name="msg" [(ngModel)]="form.msg" required minlength="3" #msg="ngModel"></textarea>
+                                            <textarea class="form-control col-lg-12 col-mg-12" id="msg" rows="8" name="msg" [(ngModel)]="form.msg" required  #msg="ngModel"></textarea>
                                         </div>
                                         <div class="alert-danger" *ngIf="msg.errors && f.submitted">
                                             <div *ngIf="msg.errors.required">Feedback is required</div>

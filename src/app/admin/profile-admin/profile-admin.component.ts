@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-admin.component.css']
 })
 export class ProfileAdminComponent implements OnInit {
-
+  username:any;
   constructor() { }
 
   ngOnInit(): void {
+    this.username = window.sessionStorage.getItem('AuthUsername');
   }
 
 }

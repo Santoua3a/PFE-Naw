@@ -24,7 +24,7 @@
                     <a href=""><span class="title" style="padding-left: 50px;"><b>Interface Admin | </b></span></a>
                 </li>
                 <li>
-                    <span class="title" style="padding-left: 50px;">Bonjour, Foulen Ben Foulen</span>
+                    <span class="title" style="padding-left: 50px;">Bonjour, {{username}}</span>
                 </li>
             </ul>
         </nav>
@@ -73,7 +73,7 @@
                                                 <th scope="col">Action Commercial</th>
                                             </tr>
                                             </thead>
-                                            <tbody *ngFor= "let t of tab">
+                                            <tbody *ngFor= "let t of v">
                                             <tr>
                                                 <th scope="row">{{t.nom}} {{t.prenom}}</th>
                                                 <td>{{t.email}}</td>
@@ -92,10 +92,7 @@
                                                             data-placement="top" title="View"><a href="#"><span
                                                                 class="flaticon-view"></span></a></li>
                                                         <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#"><span
-                                                                class="flaticon-edit"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Delete"><a href="#"><span
+                                                            data-placement="top" title="Delete" (click)="onDelete(t.id)"><a ><span
                                                                 class="flaticon-garbage"></span></a></li>
                                                     </ul>
                                                 </td>

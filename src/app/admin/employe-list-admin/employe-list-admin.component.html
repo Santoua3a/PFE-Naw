@@ -24,7 +24,7 @@
                     <a href=""><span class="title" style="padding-left: 50px;"><b>Interface Admin | </b></span></a>
                 </li>
                 <li>
-                    <span class="title" style="padding-left: 50px;">Bonjour, Foulen Ben Foulen</span>
+                    <span class="title" style="padding-left: 50px;">Bonjour, {{username}}</span>
                 </li>
             </ul>
         </nav>
@@ -48,7 +48,7 @@
                                     <div class="candidate_revew_search_box course fn-520">
                                         <form class="form-inline my-2">
                                             <input class="form-control mr-sm-2" type="search"
-                                                   placeholder="Rechercher Gérant" aria-label="Search">
+                                                   placeholder="Rechercher Gérant" aria-label="Search" (ngModelChange)="findmanager()" [(ngModel)]="value">
                                             <button class="btn my-2 my-sm-0" type="submit"><span
                                                     class="flaticon-magnifying-glass"></span></button>
                                         </form>
@@ -74,129 +74,21 @@
                                                 <th scope="col">Action</th>
                                             </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody *ngFor = "let f of m " >
                                             <tr>
-                                                <th class="title" scope="row">Gérant 1</th>
+                                                <th class="title" scope="row">{{f.nom}} {{f.prenom}}</th>
                                                 <td class="dn-lg"></td>
-                                                <td class="para">1@gérant.com</td>
+                                                <td class="para">{{f.email}}</td>
                                                 <td class="dn-lg"></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td>
                                                     <ul class="view_edit_delete_list mb0">
                                                         <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="View"><a href="#"><span
+                                                            data-placement="top" title="View"><a><span
                                                                 class="flaticon-view"></span></a></li>
                                                         <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#"><span
-                                                                class="flaticon-edit"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Delete"><a href="#"><span
-                                                                class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Gérant 2</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="para">2@gérant.com</td>
-                                                <td class="dn-lg"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="View"><a href="#"><span
-                                                                class="flaticon-view"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#"><span
-                                                                class="flaticon-edit"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Delete"><a href="#"><span
-                                                                class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Gérant 3</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="para">3@gérant.com</td>
-                                                <td class="dn-lg"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="View"><a href="#"><span
-                                                                class="flaticon-view"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#"><span
-                                                                class="flaticon-edit"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Delete"><a href="#"><span
-                                                                class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Gérant 4</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="para">4@gérant.com</td>
-                                                <td class="dn-lg"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="View"><a href="#"><span
-                                                                class="flaticon-view"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#"><span
-                                                                class="flaticon-edit"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Delete"><a href="#"><span
-                                                                class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Gérant 5</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="para">5@gérant.com</td>
-                                                <td class="dn-lg"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="View"><a href="#"><span
-                                                                class="flaticon-view"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#"><span
-                                                                class="flaticon-edit"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Delete"><a href="#"><span
-                                                                class="flaticon-garbage"></span></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="title" scope="row">Gérant 6</th>
-                                                <td class="dn-lg"></td>
-                                                <td class="para">6@gérant.com</td>
-                                                <td class="dn-lg"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <ul class="view_edit_delete_list mb0">
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="View"><a href="#"><span
-                                                                class="flaticon-view"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Edit"><a href="#"><span
-                                                                class="flaticon-edit"></span></a></li>
-                                                        <li class="list-inline-item" data-toggle="tooltip"
-                                                            data-placement="top" title="Delete"><a href="#"><span
+                                                            data-placement="top" title="Delete" (click)="onDelete(f.id)"><a><span
                                                                 class="flaticon-garbage"></span></a></li>
                                                     </ul>
                                                 </td>

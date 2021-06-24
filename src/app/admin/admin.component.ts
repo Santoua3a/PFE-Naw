@@ -11,10 +11,13 @@ import { UserService } from '../_services/user.service';
 export class AdminComponent implements OnInit {
   board!: string;
   errorMessage!: string;
+  username!: any;
 
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.username = window.sessionStorage.getItem('AuthUsername');
+    console.log(this.username)
     this.userService.getAdminBoard().subscribe(
       data => {
         this.board = data;

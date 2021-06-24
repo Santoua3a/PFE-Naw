@@ -36,6 +36,7 @@ import { ProfileCommercialeComponent } from './commerciale/profile-commerciale/p
 import { ProfileClComponent } from './client/profile-cl/profile-cl.component';
 import { authInterceptorProviders } from './_auth/auth.interceptor';
 import { HttpClientModule } from '@angular/common/http';
+import { UserviewComponent } from './userview/userview.component';
 
 
 
@@ -70,7 +71,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommercialListGerantComponent,
     ProfileGerantComponent,
     ProfileCommercialeComponent,
-    ProfileClComponent
+    ProfileClComponent,
+    UserviewComponent
   ],
   imports: [
     BrowserModule,

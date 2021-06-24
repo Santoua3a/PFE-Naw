@@ -5,6 +5,6 @@
         <li><a routerLink='/send-feedback'><i class="flaticon-user"></i><span> Envoyer Feedback</span></a></li>
         <li class="title"><span>Gérer Compte</span></li>
         <li><a routerLink='/profilecl'><i class="flaticon-user"></i> <span>Mon Profil</span></a></li>
-        <li><a routerLink='/home'><i class="flaticon-logout"></i> <span>Se déconnecter</span></a></li>
+        <li (click)="signOut()"><a style="color:whitesmoke;"><i class="flaticon-logout"></i> <span>Se déconnecter</span></a></li>
     </ul>
 </div>

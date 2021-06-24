@@ -23,6 +23,7 @@ import { TasksCommercialeComponent } from './commerciale/tasks-commerciale/tasks
 import { AddTaskGerantComponent } from './gerant/add-task-gerant/add-task-gerant.component';
 import { TaskListGerantComponent } from './gerant/task-list-gerant/task-list-gerant.component';
 import { ProfileCommercialeComponent } from './commerciale/profile-commerciale/profile-commerciale.component';
+import { UserviewComponent } from './userview/userview.component';
 
 
 const routes: Routes = [
@@ -101,6 +102,10 @@ const routes: Routes = [
   },
   {
     path:'profilead', component:ProfileAdminComponent
+  },
+  {
+    path:'userview/:id', component:UserviewComponent
+    
   }
 ];
 
